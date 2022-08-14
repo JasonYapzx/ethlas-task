@@ -28,10 +28,10 @@ export default function Home() {
 
         <NavBar></NavBar>
         <Body className="flex flex-col items-center">
-          <h1 className="text-3xl m-10 md:text-7xl">
+          <h1 className="text-1xl m-10 md:text-5xl">
             Find out which character you are. Take the quiz now!
           </h1>
-          <Image src={vector} height="500px" width="500px"></Image>
+          <Image src={vector} height="500px" width="500px" alt="landing"></Image>
           <button onClick={handleQuiz} className='m-10 bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-sm px-6 py-2 rounded-md hover:bg-yellow-300 ease-linear transition-all duration-150'>Take me there!</button>
         </Body>
 
