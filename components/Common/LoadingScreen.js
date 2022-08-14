@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import Image from 'next/future/image'
+import star from "../../public/images/star.svg";
+import wars from "../../public/images/wars.svg";
+
 
 export default function LoadingScreen() {
     const [faded, setFaded] = useState(false);
@@ -15,12 +19,8 @@ export default function LoadingScreen() {
         }`}
       >
             <div className="starwars-demo">
-                <picture>
-                <img src="//cssanimation.rocks/demo/starwars/images/star.svg" alt="Star" className="star" />
-                </picture>
-                <picture>
-                <img src="//cssanimation.rocks/demo/starwars/images/wars.svg" alt="Wars" className="wars" />
-                </picture>
+                <Image src={star} alt="Star" className="star" />
+                <Image src={wars} alt="Wars" className="wars" />
                 <h2 className="byline" id="byline">The Force Awakens</h2>
             </div>
         </div>
