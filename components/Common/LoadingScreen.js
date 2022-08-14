@@ -14,10 +14,10 @@ export default function LoadingScreen() {
           faded ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"
         }`}
       >
-            <div class="starwars-demo">
+            <div className="starwars-demo">
                 <img src="//cssanimation.rocks/demo/starwars/images/star.svg" alt="Star" class="star" />
                 <img src="//cssanimation.rocks/demo/starwars/images/wars.svg" alt="Wars" class="wars" />
-                <h2 class="byline" id="byline">The Force Awakens</h2>
+                <h2 className="byline" id="byline">The Force Awakens</h2>
             </div>
         </div>
     )
