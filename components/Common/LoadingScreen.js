@@ -6,7 +6,7 @@ export default function LoadingScreen() {
     useEffect(() => {
         setTimeout(() => {
         setFaded(true);
-        }, 4000);
+        }, 5000);
     }, []);
     return (
         <div
@@ -15,12 +15,8 @@ export default function LoadingScreen() {
         }`}
       >
             <div className="starwars-demo">
-                <picture>
                 <img src="//cssanimation.rocks/demo/starwars/images/star.svg" alt="Star" className="star" />
-                </picture>
-                <picture>
                 <img src="//cssanimation.rocks/demo/starwars/images/wars.svg" alt="Wars" className="wars" />
-                </picture>
                 <h2 className="byline" id="byline">The Force Awakens</h2>
             </div>
         </div>
