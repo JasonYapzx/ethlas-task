@@ -31,7 +31,7 @@ a {
   }
 }
 
-/* Animation properties */
+/* Star Wars Loading Animation properties */
 .star {
   animation: star 10s ease-out infinite;
 }
@@ -174,7 +174,7 @@ img {
   }
 }
 
-
+/* Link underlining animation */
 .link-underline {
   border-bottom-width: 0;
   background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);

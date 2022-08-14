@@ -1,12 +1,20 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import Body from '../components/Common/Body'
 import LoadingScreen from '../components/Common/LoadingScreen'
 import Question from '../components/Quiz/Question'
-import Link from 'next/link'
 import NavBar from '../components/Common/NavBar'
+import Link from 'next/link'
+import Head from 'next/head'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+import vector from "../public/images/vectorart.svg";
 
 export default function Home() {
+  const router = useRouter();
+  const handleQuiz = () => {
+    router.push("/quiz");
+  }
+
+
   return (
     <>
     <LoadingScreen />
@@ -19,11 +27,12 @@ export default function Home() {
 
 
         <NavBar></NavBar>
-        <Body>
-          <h1>
-            Are you ready to take the quiz?
+        <Body className="flex flex-col items-center">
+          <h1 className="text-3xl m-10 md:text-7xl">
+            Find out which character you are. Take the quiz now!
           </h1>
-          <Link href="/quiz" className='bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-sm px-6 py-2 rounded-md hover:bg-yellow-300 ease-linear transition-all duration-150'>Take me there!</Link>
+          <Image src={vector} height="500px" width="500px"></Image>
+          <button onClick={handleQuiz} className='m-10 bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-sm px-6 py-2 rounded-md hover:bg-yellow-300 ease-linear transition-all duration-150'>Take me there!</button>
         </Body>
 
       </div>

@@ -7,6 +7,9 @@ const nextConfig = {
       allowFutureImage: true,
     },
   },
+  images: {
+    domains: ["vignette.wikia.nocookie.net"],
+  },
 }
 
 module.exports = nextConfig
