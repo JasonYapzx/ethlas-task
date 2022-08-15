@@ -1,7 +1,7 @@
 # Starwars Quiz App - Which Star Wars character are you?
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-This application is currently deployed on [Vercel](https://ethlas-task-ten.vercel.app/) and is a project created by myself for Ethlas' Software Engineer Intern role.
+This application is currently deployed on [Vercel](https://ethlas-task-zeta.vercel.app/) and is a project created by myself for Ethlas' Software Engineer Intern role.
 Feel free to provide any feedback, as it is my first time implementing NextJS and Prisma!
 
 ## Getting Started
