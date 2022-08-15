@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import questions from '../../public/questions.json';
 
 export default function Answer({options, curr, handle, selectedOptions}) {

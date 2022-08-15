@@ -1,11 +1,17 @@
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
+
 import Body from '../components/Common/Body';
 import NavBar from '../components/Common/NavBar';
 import Question from '../components/Quiz/Question';
-import { getPlanets, getSpecies, getFilms } from './api/fetchChoices';
 import Loading from '../components/Common/Loading';
 
+import Link from 'next/link';
+import { getPlanets, getSpecies, getFilms } from './api/fetchChoices';
+
+/**
+ * 
+ * @returns Quiz Page of the application
+ */
 export default function Quiz() {
     const [ data, setData ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(false);

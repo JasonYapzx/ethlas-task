@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import Image from 'next/future/image'
 import star from "../../public/images/star.svg";
 import wars from "../../public/images/wars.svg";
-
+import Image from 'next/future/image'
 
 export default function LoadingScreen() {
     const [faded, setFaded] = useState(false);

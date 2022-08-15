@@ -2,18 +2,23 @@ import Body from '../components/Common/Body'
 import LoadingScreen from '../components/Common/LoadingScreen'
 import Question from '../components/Quiz/Question'
 import NavBar from '../components/Common/NavBar'
+
 import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+
 import vector from "../public/images/vectorart.svg";
 
+/**
+ * 
+ * @returns Landing Page of the application
+ */
 export default function Home() {
   const router = useRouter();
   const handleQuiz = () => {
     router.push("/quiz");
   }
-
 
   return (
     <>

@@ -1,25 +1,29 @@
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
+
 import Body from '../components/Common/Body';
 import Loading from '../components/Common/Loading';
 import NavBar from '../components/Common/NavBar';
-import { useRouter } from 'next/router';
-import { getPerson } from './api/fetchChoices';
 import Person from '../components/Common/Person';
 
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { getPerson } from './api/fetchChoices';
 
+/**
+ * 
+ * @returns Result page after submitting the quiz
+ */
 export default function Result() {
     const [ isLoading, setIsLoading ] = useState(false);
     const [ person, setPerson ] = useState();
     const router = useRouter();
 
     useEffect(() => {
-        const person = router.query.person;
+        const personId = router.query.personId;
         setIsLoading(true);
         
         const fetchData = async () => {
-            let output = person.replace("https://swapi.dev/api/people/", '').slice(0, -1);
-            let data = await getPerson(output);
+            let data = await getPerson(personId);
 
             setPerson(data);
             setIsLoading(false);
@@ -27,8 +31,6 @@ export default function Result() {
 
         fetchData()
     }, [router.query]);
-
-    console.log(person);
 
     return (
     <>

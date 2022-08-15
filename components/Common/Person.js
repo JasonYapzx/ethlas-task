@@ -1,7 +1,12 @@
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import placeholder from '../../public/images/placeholder.png';
+import Image from 'next/image';
 
+/**
+ * 
+ * @param person Person that is being loaded 
+ * @returns Component displaying the person chosen
+ */
 
 export default function Person({ person }) {
     const [ imageError, setImageError ] = useState(false);

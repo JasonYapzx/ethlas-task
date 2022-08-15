@@ -1,14 +1,17 @@
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import questions from '../../public/questions.json';
+
 import Loading from '../Common/Loading';
 import Answer from './Answer';
+import questions from '../../public/questions.json';
+
+
+import { useRouter } from 'next/router';
+import { PrismaClient } from '@prisma/client';
 
 export default function Question({options}) {
     const [ currentQuestion, setCurrentQuestion ] = useState(0); // Question Navigation
     const [ selectedOptions, setSelectedOptions ] = useState([]); // States to store the options selection
     const router = useRouter();
-
 
     /* For navigation between questions */
     const handlePrevious = () => {
@@ -30,7 +33,7 @@ export default function Question({options}) {
     }
 
     /* Submission of quiz */
-    const handleSubmitButton = () => {
+    const handleSubmitButton = async () => {
         // check no options selected
         if (selectedOptions.length != 3) {
             alert("Please complete all questions first!")
@@ -45,12 +48,19 @@ export default function Question({options}) {
                     return acc?.concat(currVal);
             }, []).filter(x => x !== undefined);
 
-            // person - result
+            // personId for querying
             const person = people[Math.floor(Math.random()*people.length)];
+            const personId = person.replace("https://swapi.dev/api/people/", '').slice(0, -1);
+
+            const response = await fetch('/api/persons', {
+                method: 'PUT',
+                body: personId
+            })
+
 
             router.push({
                 pathname: '/result',
-                query: { person: person }
+                query: { personId: personId }
             }, '/result');
         }
     };
