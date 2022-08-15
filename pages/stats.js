@@ -13,7 +13,7 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const people = await prisma.person.findMany();
     return {
         props: {
