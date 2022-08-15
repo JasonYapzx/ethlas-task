@@ -60,7 +60,7 @@ export default function Question({options}) {
 
             router.push({
                 pathname: '/result',
-                query: { personId: personId }
+                query: { person: person }
             }, '/result');
         }
     };

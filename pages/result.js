@@ -19,11 +19,10 @@ export default function Result() {
     const router = useRouter();
 
     useEffect(() => {
-        const personId = router.query.personId;
+        const person = router.query.person;
         setIsLoading(true);
         
         const fetchData = async () => {
-            let data = await getPerson(personId);
             // ensures the results page would have a person on loading
             if (person === undefined) {
                 router.push("/quiz");
@@ -49,12 +48,15 @@ export default function Result() {
               </div>
             : <Person person={person}></Person>
             }
-            <div className='flex flex-row w-full justify-evenly'>
+            <div className='flex flex-row w-2/3 justify-evenly'>
                 <h2 className='link link-underline link-underline-black max-w-fit'>
                     <Link href="/">Home</Link>
                 </h2>
                 <h2 className='link link-underline link-underline-black max-w-fit'>
                     <Link href="/quiz">Do another quiz</Link>
+                </h2>
+                <h2 className='link link-underline link-underline-black max-w-fit'>
+                    <Link href="/stats">Check the stats</Link>
                 </h2>
             </div>
         </Body>
