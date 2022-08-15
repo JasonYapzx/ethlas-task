@@ -24,9 +24,16 @@ export default function Result() {
         
         const fetchData = async () => {
             let data = await getPerson(personId);
+            // ensures the results page would have a person on loading
+            if (person === undefined) {
+                router.push("/quiz");
+            } else {
+                let output = person.replace("https://swapi.dev/api/people/", '').slice(0, -1);
+                let data = await getPerson(output);
 
-            setPerson(data);
-            setIsLoading(false);
+                setPerson(data);
+                setIsLoading(false);
+            }
         }
 
         fetchData()
@@ -37,7 +44,7 @@ export default function Result() {
         <NavBar></NavBar>
         <Body className="flex flex-col items-center">
             { isLoading 
-            ? <div className="flex flex-col px-5 py-5 h-[524px] rounded-lg bg-[#1A1A1A] justify-center items-center">
+            ? <div className="flex flex-col px-5 py-5 h-[524px] w-full sm:w-1/2 rounded-lg bg-[#1A1A1A] justify-center items-center">
                 <Loading />
               </div>
             : <Person person={person}></Person>
