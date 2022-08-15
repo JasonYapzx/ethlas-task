@@ -47,7 +47,7 @@ export default function Stats({ initialPeople }) {
         <Body className="flex flex-col items-center">
             <div className="text-center border-solid border-white border-4 rounded-2xl my-5">
                 {initialPeople.map((data, index) => (
-                    <p className={`mx-12 mt-2 ${index === 0 ? "text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-white to-yellow-600" 
+                    <p key={index} className={`mx-12 mt-2 ${index === 0 ? "text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-white to-yellow-600" 
                                         : index === 1 ? "text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-600" 
                                         : index === 2 ? "text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-white to-orange-900" 
                                         : "text-white"}`}>{index + 1}. {data.name}: {data.count} {data.count == 1 ? "person" : "people"}</p>
