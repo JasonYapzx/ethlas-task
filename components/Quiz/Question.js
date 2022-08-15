@@ -57,7 +57,6 @@ export default function Question({options}) {
                 body: personId
             })
 
-
             router.push({
                 pathname: '/result',
                 query: { person: person }
